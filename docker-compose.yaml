@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  project-name.cli-alpine:
+    build:
+      context: .
+      dockerfile: dockerfile.cli-alpine-test
+  project-name.cli-debian:
+    build:
+      context: .
+      dockerfile: dockerfile.cli-debian-test
+  project-name.api:
+    build:
+      context: .
+      dockerfile: dockerfile.api
+    ports:
+      - "3000:3000"
+    

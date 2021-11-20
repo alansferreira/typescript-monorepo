@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    // Global sources context for typescript-transform-paths
+    "rootDir": "packages",
+
+    "declaration": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "allowUmdGlobalAccess": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "pretty": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+
+    "target": "ES2017",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "lib": ["es2020", "dom"],
+    "types": [
+      "node", "jest"
+    ],
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],
+    "plugins": [
+      // Transform paths in output .js files
+      { "transform": "typescript-transform-paths" },
+
+      // // Transform paths in output .d.ts files (Include this line if you output declarations files)
+      // { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ]
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [ "typescript-transform-paths/register" ],
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+
+}

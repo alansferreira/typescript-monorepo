@@ -1,0 +1,28 @@
+# builder step
+# https://docs.docker.com/develop/develop-images/multistage-build/#name-your-build-stages
+FROM node:14-alpine AS builder
+
+WORKDIR /app
+
+COPY LICENSE  package.json  tsconfig.json  yarn.lock /app/
+
+COPY packages/api/ /app/packages/api/
+
+COPY packages/libs/lib-one/ /app/packages/libs/lib-one/
+
+RUN yarn 
+RUN yarn --cwd /app/packages/api build
+
+# final image artifact
+FROM node:14-alpine
+
+WORKDIR /app
+
+# https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/
+RUN apk add dumb-init
+
+COPY --from=builder /app/node_modules/ /app/node_modules/
+COPY --from=builder /app/packages/api/dist/api/ /app/api/
+COPY --from=builder /app/packages/api/dist/libs/ /app/libs/
+
+CMD ["dumb-init", "node", "/app/api/src/server.js"]

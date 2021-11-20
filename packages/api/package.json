@@ -1,0 +1,41 @@
+{
+  "name": "@project-name/api",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Alan S. Ferreira",
+  "license": "MIT License",
+  "private": true,
+  "scripts": {
+    "prepare": "ts-patch install -s",
+    "prebuild": "rimraf dist && yarn swagger",
+    "swagger": "tsoa spec-and-routes",
+    "build": "ttsc --build",
+
+    "start": "node -r typescript-transform-paths/register dist/api/src/server.js",
+    "start:dev": "nodemon",
+    "nodemon:exec": "yarn swagger && ts-node src/server.ts",
+
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r typescript-transform-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./jest-e2e.json"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "handlebars": "4.7.7",
+    "swagger-ui-express": "^4.1.6",
+    "tsoa": "^3.14.1"
+  },
+  "devDependencies": {
+    "@tsoa/cli": "^3.14.1",
+    "@types/express": "^4.17.13",
+    "@types/swagger-ui-express": "^4.1.3",
+    "nodemon": "^2.0.15",
+    "tsconfig-paths": "^3.11.0"
+  }
+}

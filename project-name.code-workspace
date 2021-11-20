@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"name": "✨ project-name",
+			"path": "."
+		},
+		{
+			"name": "🚀 @project-name/api",
+			"path": "packages/api"
+		},
+		{
+			"name": "📦 @project-name/app",
+			"path": "packages/app"
+		},
+		{
+			"name": "📦 @project-name/cli",
+			"path": "packages/cli"
+		},
+		{
+			"name": "📦 @project-name/lib-one",
+			"path": "packages/libs/lib-one"
+		}
+	],
+	"settings": {}
+}

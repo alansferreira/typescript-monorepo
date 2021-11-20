@@ -1,0 +1,40 @@
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "27.3.1",
+    "prettier": "2.4.1",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "supertest": "6.1.6",
+    "typescript-ioc": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/jest": "27.0.3",
+    "@types/node": "^14.14.22",
+    "@types/supertest": "2.0.11",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "eslint": "8.2.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "prettier": "2.4.1",
+    "ts-jest": "27.0.7",
+    "ts-loader": "9.2.6",
+    "ts-node": "10.4.0",
+    "ts-patch": "^2.0.1",
+    "tsconfig-paths": "^3.11.0",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.3.5",
+    "typescript-transform-paths": "^3.3.1"
+  },
+  "workspaces": [
+    "packages/*",
+    "packages/libs/*"
+  ]
+}

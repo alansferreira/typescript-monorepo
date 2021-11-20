@@ -1,0 +1,7 @@
+FROM debian
+
+WORKDIR /app
+
+COPY packages/cli/releases/cli-node14-alpine ./
+
+CMD /app/cli-node14-alpine hello john

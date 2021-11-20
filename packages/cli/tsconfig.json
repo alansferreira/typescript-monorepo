@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "esModuleInterop": false,
+    "paths": {
+      "@project-name/lib-one/*": [
+        "../libs/lib-one/src/*",
+      ]
+    },
+  },
+
+  "include": [
+    "src/**/*",
+    "src/**/*.json"
+  ],
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+}

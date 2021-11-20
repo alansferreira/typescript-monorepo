@@ -1,0 +1,24 @@
+{
+  "entryFile": "src/app.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/**/*.controller.ts"],
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+
+    "paths": {
+      "@project-name/lib-one/*": [
+        "../libs/lib-one/src/*"
+      ]
+    }
+  },
+
+  "spec": {
+    "outputDirectory": "./",
+    "specVersion": 3
+  },
+  "routes": {
+    "routesDir": "src/.config"
+  }
+}

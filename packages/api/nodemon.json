@@ -1,0 +1,8 @@
+{
+  "watch": ["src", "../libs/lib-one/src"],
+  "ext": "ts,json",
+  "ignore": ["**/*.spec.js"],
+  "exec": "yarn nodemon:exec",
+  "delay": 1500,
+  "stdout": true
+}
