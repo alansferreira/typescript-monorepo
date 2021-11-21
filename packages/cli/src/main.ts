@@ -10,14 +10,16 @@ const serviceOne = Container.get<ServiceOne>(ServiceOne)
 
 const program = new Command()
 
+const helloCommand = (name: string, options?: ISayOptions) => {
+  console.log(options)
+  console.log(serviceOne.say(name, options))
+}
+
 program
   .command('hello')
   .argument('[name]')
   .option('-p, --prefix <greet>', 'Hello')
-  .action((name: string, options?: ISayOptions) => {
-    console.log(options)
-    console.log(serviceOne.say(name, options))
-  })
+  .action(helloCommand)
 
 program.version(version)
 program.parse(process.argv)

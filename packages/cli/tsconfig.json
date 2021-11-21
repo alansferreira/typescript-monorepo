@@ -3,16 +3,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
-    "esModuleInterop": false,
     "paths": {
-      "@project-name/lib-one/*": [
-        "../libs/lib-one/src/*",
+      "@easy-peasy/core/*": [
+        "../libs/core/src/*",
       ]
     },
   },
 
   "include": [
-    "src/**/*",
+    "src/**/*.ts",
     "src/**/*.json"
   ],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]

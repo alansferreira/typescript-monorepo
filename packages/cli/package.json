@@ -9,7 +9,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "ttsc --build",
-    "start:dev": "ts-node src/main.ts",
+    "start:dev": "ts-node --compiler ttypescript src/main.ts",
     "pkg": "yarn build && unset NODE_OPTIONS && pkg --no-bytecode --public-packages \"*\" --public ./",
     
     "format": "prettier --write \"src/**/*.ts\"",

@@ -23,6 +23,7 @@
     "target": "ES2017",
     "module": "CommonJS",
     "moduleResolution": "Node",
+    
     "lib": ["es2020", "dom"],
     "types": [
       "node", "jest"
@@ -39,11 +40,7 @@
       // { "transform": "typescript-transform-paths", "afterDeclarations": true }
     ]
   },
-  "ts-node": {
-    "transpileOnly": true,
-    "require": [ "typescript-transform-paths/register" ],
-  },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 
 }
