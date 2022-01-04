@@ -6,6 +6,7 @@
       "runtimeExecutable": "yarn",
       "runtimeArgs": [
         "start:dev",
+        "--",
         // "hello", "Joseph"
         "hello", "-p", "Good morning", "Joseph"
       ],
